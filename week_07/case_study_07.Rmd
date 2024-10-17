@@ -1,7 +1,60 @@
 ---
-title: "Case Study 07"
-author: Your Name
-date: August 1, 2020
-output: github_document
+title: "Project Proposal: Water Runoff Analysis"
+author: Caroline Spaulding
+output: 
+  github_document
 ---
- 
+
+[<i class="fa fa-file-code-o fa-1x" aria-hidden="true"></i> Download this file as a template ](http://adamwilson.us/SpatialDataScience/scripts/Project_ProposalTemplate.Rmd).
+
+# Introduction to problem/question
+  
+# Problem / Question
+
+How has local water chemistry been affected by soil and geologic formations: 
+A runoff analysis of chemicals in the water.
+
+# Inspiring Examples
+
+## Example 1
+![](https://scijournals.onlinelibrary.wiley.com/cms/asset/7ce45aa7-7713-4da8-911d-06609700f8ae/mfig004.jpg)
+I found this graph in an analysis of water runoff in southeastern New York, where I am from. Although this
+graph focuses on pesticide usage and affects, I want to use a similar graph to isolate quantities of certain
+compounds and elements that have eroded from the natural landscape into our water sources.
+
+## Example 2
+
+![](https://onlinelibrary.wiley.com/cms/asset/795b9379-8fd9-46dc-ac8d-5b81489a542f/hyp9864-fig-0001-m.jpg)
+This graph stood out to me as it utilizes elements of rnaturalearth, particularly in the use of a north arrow
+and a scale bar. I can use the "annotation_north_arrow" and "annotation_scale" functions to reproduce this.
+This map also shows the watersheds in the area, which I can use to overlay my samples from the USGS to find
+any similarities.
+
+## Example 3
+
+![](https://onlinelibrary.wiley.com/cms/asset/16b94b40-361f-4842-8294-bdf8130e2168/jawr12086-fig-0002-m.jpg)
+I selected this graph because of the time component. I want to include how water runoff has changed over
+time, and this data from a climate change analysis survey can help me do that. I can also run an analysis
+to see if there is any correlation between higher temperatures and water chemistry.
+
+# Proposed data sources
+
+My data will come from multiple sources, including the r packages mentioned in the next section. They
+will also come from the local sources such as the Buffalo Niagara Waterkeeper. It's imperative to see
+and understand the data from multiple sources and scales in order to make appropriate legislative and
+environmental changes at the right scales for the right locations.
+
+# Proposed methods
+
+Packages to be used: grwat, fasstr, dataRetrieval, rmacrostrat, rnaturalearth, among others to be added.
+
+I will use grwat to build off of the capabilities of ggplot2, specifically in order to create maps in order
+to identify ground, rain, thaw, and spring runoff. Fasstr and rnaturalearth will help streamline this process
+and to create a more complex and interactive map. Rmacrostrat and dataRetrieval will help get me accurate data
+from the USGS, as well as incorporating data from the Buffalo Niagara Waterkeeper to create national vs local
+maps.
+
+# Expected results
+
+I want to produce maps and graphs, specifically a heat map to look for certain chemicals,
+such as nitrogen, sulfur, and phosphorus.
