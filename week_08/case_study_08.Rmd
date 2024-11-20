@@ -1,7 +1,33 @@
 ---
-title: "Case Study 08"
-author: Your Name
-date: August 1, 2020
-output: github_document
+title: "CO2 Time Series at Mauna Loa"
+author: "Caroline Spaulding"
+format: gfm
+editor: visual
 ---
- 
+
+## Introduction
+
+This document presents a time series analysis of CO₂ concentrations measured at Mauna Loa.
+
+## Plot of CO₂ Data
+
+```{r}
+# Load necessary packages
+library(readr)
+library(ggplot2)
+
+# Read the data from NOAA FTP server
+url <- "ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_annmean_mlo.txt"
+co2_data <- read_table(url, col_names = c("Year", "Mean", "Interpolated"), skip = 45, cols(
+  Year = col_double(),
+  Mean = col_double(),
+  Interpolated = col_double()
+))
+
+# Create the time series plot
+ggplot(co2_data, aes(x = Year, y = Mean)) +
+  geom_line(color = "blue", size = 1) +
+  labs(title = "Annual Mean CO₂ Concentration at Mauna Loa",
+       x = "Year", y = "CO₂ (ppm)") +
+  theme_minimal()
+```
